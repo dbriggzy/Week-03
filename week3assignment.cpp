@@ -18,6 +18,7 @@ double lowmidaus = 14.00;
 double midusa = 12.00;
 double midcan = 15.00;
 double midaus = 17.00;
+double mars = 1000.00;
 
 int main()
 {
@@ -43,9 +44,9 @@ int main()
     cout << setfill('.') << setw(49) << left << "Please enter your order total" << ":" << endl;
     cin >> usertotal;
     string userdest;
-    cout << setfill('.') << setw(49) << left << "Please enter destination. (usa/can/aus)" << ":" << endl;
+    cout << setfill('.') << setw(49) << left << "Please enter destination. (usa/can/aus/mars)" << ":" << endl;
     cin >> userdest;
-    if ((userdest != "usa" ) && (userdest != "can") && (userdest != "aus"))
+    if ((userdest != "usa" ) && (userdest != "can") && (userdest != "aus") && (userdest != "mars"))
         {
         cout << "Invalid entry, exiting" << endl;
         return 0;
@@ -68,10 +69,14 @@ int main()
             } 
         else if (userdest == "can")
             {
-            double destcost = midcan;                }   
+            destcost = midcan;                }   
         else if (userdest == "aus")
             {
             destcost = midaus;
+            }
+        else if (userdest == "mars")
+            {
+            destcost = mars;
             }
         }  
     else if (usertotal > fifty)
@@ -88,6 +93,10 @@ int main()
             {
             destcost = lowmidaus;
             }
+        else if (userdest == "mars")
+            {
+            destcost = mars;
+            }
         }  
     else{
         if (userdest == "usa")
@@ -101,6 +110,10 @@ int main()
         else if (userdest == "aus")
             {
             destcost = lessaus;
+            }
+        else if (userdest == "mars")
+            {
+            destcost = mars;
             }
         }
 
